@@ -1,0 +1,23 @@
+{
+  "labels": [
+    "나",
+    "너",
+    "만나서반갑습니다",
+    "사랑해",
+    "따뜻하다",
+    "차갑다",
+    "커피",
+    "주세요",
+    "카드",
+    "현금",
+    "감사합니다"
+  ],
+  "num_classes": 11,
+  "max_sequence_length": 100,
+  "feature_dim": 90,
+  "training_samples": 640,
+  "validation_samples": 81,
+  "final_accuracy": 0.831250011920929,
+  "final_val_accuracy": 0.7160493731498718,
+  "normalization": "relative"
+}
