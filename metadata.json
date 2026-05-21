@@ -1,0 +1,16 @@
+{
+  "labels": [
+    "나",
+    "너",
+    "만나서반갑습니다",
+    "사랑해"
+  ],
+  "num_classes": 4,
+  "max_sequence_length": 100,
+  "feature_dim": 90,
+  "training_samples": 320,
+  "validation_samples": 41,
+  "final_accuracy": 0.815625011920929,
+  "final_val_accuracy": 0.8048780560493469,
+  "normalization": "relative"
+}

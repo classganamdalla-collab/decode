@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>수어 AAC 인식기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <video id="webcam" autoplay playsinline muted></video>
+    <canvas id="outputCanvas"></canvas>
+
+    <!-- 상단 HUD -->
+    <div class="top-hud">
+      <div class="hud-brand">🤟 수어 AAC</div>
+      <div id="datasetStatus" class="hud-status">표본 로딩 중...</div>
+      <div class="hud-controls">
+        <button id="startBtn"         class="hud-btn">▶ 시작</button>
+        <button id="addWordBtn"       class="hud-btn secondary">+ 단어 추가</button>
+        <button id="clearSentenceBtn" class="hud-btn ghost">✕ 지우기</button>
+        <button id="speakSentenceBtn" class="hud-btn accent">🔊 읽기</button>
+      </div>
+    </div>
+
+    <!-- 오른쪽 패널 -->
+    <div class="right-panel">
+      <div class="panel-block">
+        <div class="panel-label">상태</div>
+        <div id="cameraStatus" class="info-line">카메라 준비 중...</div>
+        <div id="handStatus"   class="info-line">손 감지 확인 중...</div>
+        <div id="runStatus"    class="info-line">대기 중</div>
+      </div>
+
+      <div class="panel-block result-block">
+        <div class="panel-label">현재 인식</div>
+        <div id="currentPrediction" class="big-word">-</div>
+        <div id="predictionScore"   class="score-text">유사도: -</div>
+        <div id="holdBar" class="hold-bar-wrap">
+          <div id="holdBarFill" class="hold-bar-fill"></div>
+        </div>
+        <div id="holdStatus" class="hold-text">안정화 대기 중</div>
+      </div>
+
+      <div class="panel-block">
+        <div class="panel-label">인식 가능 단어</div>
+        <div id="labelChips" class="label-chips"></div>
+      </div>
+    </div>
+
+    <!-- 하단 문장 -->
+    <div class="bottom-bar">
+      <div class="sentence-label">문장</div>
+      <div id="sentenceOutput" class="sentence-output">아직 추가된 단어가 없습니다.</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
